@@ -35,7 +35,7 @@
 #define SIGNAL_TIMER_RESET    RGU_TIMER2_RST // LPC4337 TIMER2 RGU
 #define SIGNAL_MATCH_NUMBER   0              // MATCH0
 
-#define SIGNAL_COMPARE_VAUE   51000          // TimerClk = 204 MHz ==> 204 MHz / 51000 = 4 KHz ==> 250 us
+#define SIGNAL_COMPARE_VAUE    100000   //51000          // TimerClk = 204 MHz ==> 204 MHz / 51000 = 4 KHz ==> 250 us
 #define SIGNAL_INITIAL_STATE  0              // Signal initial state low
 
 /*=====[Definitions of extern global variables]==============================*/
@@ -61,7 +61,7 @@ int main( void )
 
    signalInit();  // Initialize timer to generate signal
 
-   signalStart(); // Start to generate signal
+   //signalStart(); // Start to generate signal
 
    signalCheck(); // For debug (see output at printf UART)
 

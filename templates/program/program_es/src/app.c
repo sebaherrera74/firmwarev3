@@ -8,42 +8,49 @@
  * Fecha de creacion: YYYY/MM/DD
  */
 
+/*Objetivo
+Medir el tiempo de pulsación de un botón y mostrar el tiempo encendiendo un led.
+Resumen
+El programa espera a que un botón sea pulsado. Mientras el botón está pulsado, se mide el tiempo utilizando
+un contador hasta que el botón es soltado. En ese momento, se enciende el led asociado al botón durante el
+ tiempo calculado.
+Comentarios
+Para medir el tiempo del botón es posible implementar un bucle iterativo que se extienda mientras el botón
+ está apretado. Dentro de ese bucle, existirá un delay pequeño (por ejemplo, de 1 milisegundo) y por cada
+ iteración se incrementará en 1 el contador. Cuando el bucle finaliza, significa que el botón fue soltado y
+ en el contador tendremos la cantidad de milisegundos que debemos encender el led.
+ */
+
+
 /*=====[Inclusiones de dependencias de funciones]============================*/
 
-#include "tal.h"
+#include "sapi.h"
 
 /*=====[Macros de definición de constantes privadas]=========================*/
 
-#define PI 3.1415f
 
 /*=====[Definiciones de variables globales externas]=========================*/
 
-int var;
 
 /*=====[Definiciones de variables globales publicas]=========================*/
 
-int var = 0;
 
 /*=====[Definiciones de variables globales privadas]=========================*/
 
-static int var = 0;
+
 
 /*=====[Funcion principal, punto de entrada al programa luegp de encender]===*/
 
 int main (void)
 {
-   // ----- Configuraciones -------------------------
-   setup();
+
+
+	// ----- Configuraciones -------------------------
+   boardInit();
 
    // ----- Repetir por siempre ---------------------
    while(TRUE) {
-   while(1) {
-   while(true) {
-   for(;;) {
-   etiqueta:
-      loop();
-   goto etiqueta;
-   }
+    }
 
    // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
    // directamenteno sobre un microcontrolador y no es llamado por ningun

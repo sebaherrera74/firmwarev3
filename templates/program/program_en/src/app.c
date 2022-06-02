@@ -1,36 +1,83 @@
-/*=====[Program Name]==========================================================
- * Copyright YYYY Author Compelte Name <author@mail.com>
+/*=====[Nombre del programa]===================================================
+ * Copyright YYYY Nombre completo del autor <author@mail.com>
  * All rights reserved.
- * License: license text or at least name and link 
-         (example: BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>)
+ * Licencia: Texto de la licencia o al menos el nombre y un link
+         (ejemplo: BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>)
  *
  * Version: 0.0.0
- * Creation Date: YYYY/MM/DD
+ * Fecha de creacion: YYYY/MM/DD
  */
 
-/*=====[Inclusions of function dependencies]=================================*/
+/*=====[Inclusiones de dependencias de funciones]============================*/
 
-/*=====[Definition macros of private constants]==============================*/
+#include "tal.h"
 
-/*=====[Definitions of extern global variables]==============================*/
+/*=====[Macros de definición de constantes privadas]=========================*/
 
-/*=====[Definitions of public global variables]==============================*/
+#define PI 3.1415f
 
-/*=====[Definitions of private global variables]=============================*/
+/*=====[Definiciones de variables globales externas]=========================*/
 
-/*=====[Main function, program entry point after power on or reset]==========*/
+int var;
+
+/*=====[Definiciones de variables globales publicas]=========================*/
+
+int var = 0;
+
+/*=====[Definiciones de variables globales privadas]=========================*/
+
+static int var = 0;
+
+/*=====[Funcion principal, punto de entrada al programa luegp de encender]===*/
 
 int main (void)
 {
-   // ----- Configurations --------------------------
+   // ----- Configuraciones -------------------------
+   setup();
 
-   // ----- Repeat for ever -------------------------
+   // ----- Repetir por siempre ---------------------
    while(TRUE) {
-      
+   while(1) {
+   while(true) {
+   for(;;) {
+   etiqueta:
+      loop();
+   goto etiqueta;
    }
 
-   // YOU NEVER REACH HERE, because this program runs directly or on a
-   // microcontroller and is not called by any Operating System, as in the 
-   // case of a PC program.
+   // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
+   // directamenteno sobre un microcontrolador y no es llamado por ningun
+   // Sistema Operativo, como en el caso de un programa para PC.
    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+void setup()
+{
+   configurar puerto serie...
+}
+
+void loop()
+{
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+

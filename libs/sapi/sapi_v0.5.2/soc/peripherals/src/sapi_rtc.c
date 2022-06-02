@@ -37,6 +37,7 @@
 /*==================[inclusions]=============================================*/
 
 #include "sapi_rtc.h"
+#include "sapi_delay.h"
 
 /*==================[macros and definitions]=================================*/
 
@@ -60,12 +61,43 @@
 bool_t rtcInit( void )
 {
    bool_t ret_val = 1;
+/*
+   static bool_t init;
 
-   Chip_RTC_Init(LPC_RTC);
+   if( init ){
+      // Already initialized
+      ret_val = 0;
+   } else {
+*/
+      /* RTC Block section ------------------------- */
+      Chip_RTC_Init(LPC_RTC);
 
-   // Enable rtc (starts increase the tick counter
-   // and second counter register)
-   Chip_RTC_Enable(LPC_RTC, ENABLE);
+      /* Set current time for RTC */
+      /* Current time is 22:00:00 , 2016-07-02 */
+   
+   /*
+      RTC_TIME_T rtcTime;
+      rtcTime.time[RTC_TIMETYPE_SECOND]     = 0;
+      rtcTime.time[RTC_TIMETYPE_MINUTE]     = 0;
+      rtcTime.time[RTC_TIMETYPE_HOUR]       = 0;
+      rtcTime.time[RTC_TIMETYPE_DAYOFWEEK]  = 0;
+      rtcTime.time[RTC_TIMETYPE_DAYOFMONTH] = 0;
+      rtcTime.time[RTC_TIMETYPE_MONTH]      = 0;
+      rtcTime.time[RTC_TIMETYPE_YEAR]       = 0;
+      Chip_RTC_SetFullTime(LPC_RTC, &rtcTime);
+      */
+
+
+      //rtcWrite( rtc );
+
+      /* Enable rtc (starts increase the tick counter
+         and second counter register) */
+      Chip_RTC_Enable(LPC_RTC, ENABLE);
+      
+      delay(2100);
+
+      //init = 1;
+   //}
 
    return ret_val;
 }
@@ -108,7 +140,7 @@ bool_t rtcWrite( rtc_t * rtc )
    rtcTime.time[RTC_TIMETYPE_SECOND]     = rtc->sec;
    rtcTime.time[RTC_TIMETYPE_MINUTE]     = rtc->min;
    rtcTime.time[RTC_TIMETYPE_HOUR]       = rtc->hour;
-   rtcTime.time[RTC_TIMETYPE_DAYOFMONTH] = rtc->wday;
+   rtcTime.time[RTC_TIMETYPE_DAYOFWEEK]  = rtc->wday;
    rtcTime.time[RTC_TIMETYPE_DAYOFMONTH] = rtc->mday;
    rtcTime.time[RTC_TIMETYPE_MONTH]      = rtc->month;
    rtcTime.time[RTC_TIMETYPE_YEAR]	     = rtc->year;

@@ -4,10 +4,12 @@ EXTERNAL_PERIPH_BASE=$(SAPI_BASE)/external_peripherals
 
 INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/display/fonts/inc
 INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/display/fonts/greek_chars_5x7/inc
+INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/display/fonts/icon_chars_5x7/inc
 INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/display/lcd/inc
 INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/display/led_segments/7segment/inc
 
 SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/display/fonts/greek_chars_5x7/src/*.c)
+SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/display/fonts/icon_chars_5x7/src/*.c)
 SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/display/lcd/src/*.c)
 SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/display/led_segments/7segment/src/*.c)
 
@@ -61,3 +63,9 @@ SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/ultrasonic/hcsr04/src/*.c)
 
 INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/wifi/esp8266_at/inc
 SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/wifi/esp8266_at/src/*.c)
+
+
+INCLUDES += -I$(EXTERNAL_PERIPH_BASE)/swicthgpio/inc
+SRC += $(wildcard $(EXTERNAL_PERIPH_BASE)/swicthgpio/src/*.c)
+
+
