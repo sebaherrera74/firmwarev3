@@ -8,9 +8,7 @@
  * Fecha de creacion: YYYY/MM/DD
  */
 
-/*Interrupcion del Pin GPIO07 , para sensar el swicht de fin de carrera que me dice la posicion
- * cero del monocromador.
- */
+
 
 /*=====[Inclusiones de dependencias de funciones]============================*/
 
@@ -30,24 +28,31 @@ int main (void)
 
 	boardConfig();
 	display7seg_init();
-	gpioWrite( GPIO4, 0 );
+	gpioWrite( GPIO4, 1);
+	gpioWrite( GPIO5, 1);
+ uint8_t i=0;
 
-
-
-
+ uint16_t tiempo=1000;
 
 
 	// ----- Repetir por siempre ---------------------
 	while(TRUE) {
-		delay(1000);
+if (tiempo==0){
+	tiempo=1000;
+	}
+		/*delay(1000);
 		display7segEnciendeDig(0);
 		delay(1000);
 		display7segEnciendeDig(1);
 		delay(1000);
 		display7segEnciendeDig(2);
-		delay(1000);
+		delay(1000);*/
+	for (i=0;i<10;i++){
+	  display7segEnciendeDig(i);
 
-
+	  delay(tiempo);
+  }
+tiempo=tiempo-50;
 
 
 		//gpioToggle(LED1);

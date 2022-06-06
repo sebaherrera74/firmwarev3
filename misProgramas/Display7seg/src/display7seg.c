@@ -11,9 +11,10 @@
 /*=====[Inclusion de su propia cabecera]=====================================*/
 
 #include "display7seg.h"
-
 #include "sapi.h"
 /*=====[Macros de definicion de constantes privadas]=========================*/
+# define ON  1
+# define OFF 0
 /*=====[Macros estilo funcion privadas]======================================*/
 /*=====[Definiciones de tipos de datos privados]=============================*/
 // Tipo de datos que renombra un tipo basico
@@ -44,82 +45,78 @@ void display7segEnciendeDig(uint8_t numero){
 
 
 	case 0 :
-	gpioWrite( GPIO0, 0 );
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 0 );
-	gpioWrite( GPIO3, 0 );
+	gpioWrite( GPIO0, OFF);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, OFF);
     	break;
 
 	case 1:
-		gpioWrite( GPIO0, 1);
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 0);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, ON);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, OFF);
    break;
 
 	case 2:
-	gpioWrite( GPIO0, 0);
-	gpioWrite( GPIO1, 1);
-	gpioWrite( GPIO2, 0);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, OFF);
+	gpioWrite( GPIO1, ON);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, OFF);
 	break;
 
 	case 3:
-	gpioWrite( GPIO0, 1);
-	gpioWrite( GPIO1, 1);
-	gpioWrite( GPIO2, 0);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, ON);
+	gpioWrite( GPIO1, ON);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, OFF);
 break;
 	case 4:
-	gpioWrite( GPIO0, 0);
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 1);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, OFF);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, ON);
+	gpioWrite( GPIO3, OFF);
 break;
 
 	case 5:
-	gpioWrite( GPIO0, 1);
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 1);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, ON);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, ON);
+	gpioWrite( GPIO3, OFF);
 break;
 
 	case 6:
-	gpioWrite( GPIO0, 0);
-	gpioWrite( GPIO1, 1);
-	gpioWrite( GPIO2, 1);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, OFF);
+	gpioWrite( GPIO1, ON);
+	gpioWrite( GPIO2, ON);
+	gpioWrite( GPIO3, OFF);
 break;
 
 	case 7:
-	gpioWrite( GPIO0, 1);
-	gpioWrite( GPIO1, 1);
-	gpioWrite( GPIO2, 1);
-	gpioWrite( GPIO3, 0);
+	gpioWrite( GPIO0, ON);
+	gpioWrite( GPIO1, ON);
+	gpioWrite( GPIO2, ON);
+	gpioWrite( GPIO3, OFF);
 break;
 
 	case 8:
-	gpioWrite( GPIO0, 0);
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 0);
-	gpioWrite( GPIO3, 1);
+	gpioWrite( GPIO0, OFF);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, ON);
 break;
 
 	case 9:
-	gpioWrite( GPIO0, 1);
-	gpioWrite( GPIO1, 0);
-	gpioWrite( GPIO2, 0);
-	gpioWrite( GPIO3, 1);
+	gpioWrite( GPIO0, ON);
+	gpioWrite( GPIO1, OFF);
+	gpioWrite( GPIO2, OFF);
+	gpioWrite( GPIO3, ON);
 break;
 
 	default:
 	      // instructions par défaut
-	      break;
-
-
+     break;
 	}
-
-
 }
 
 
